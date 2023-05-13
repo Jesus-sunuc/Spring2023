@@ -1,0 +1,71 @@
+﻿@page "/Vendor"
+@page "/"
+@inject LotteryProgram lp
+
+<main>
+    <div class="spaceA">
+        <h1 class="name">Vendor Lottery Ticket Sales Control</h1>
+        <label class="name">Vendor Name</label>
+        <input class="form-control mrgRL" placeholder="Jesus" aria-label="Recipient's username" aria-describedby="basic-addon2" @bind="vendorname" />
+    </div>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12 bg-primary"></span>
+    <span class="placeholder col-12 bg-secondary"></span>
+    <span class="placeholder col-12 bg-success"></span>
+    <span class="placeholder col-12 bg-danger"></span>
+    <span class="placeholder col-12 bg-warning"></span>
+    <span class="placeholder col-12 bg-info"></span>
+    <span class="placeholder col-12 bg-light"></span>
+    <span class="placeholder col-12 bg-dark"></span>
+</main>
+
+@if (lp.p.SalesState == TicketSales.OK && !String.IsNullOrWhiteSpace(vendorname))
+{
+    <VendorPurchasingControls VendorName=@vendorname/>
+    
+}
+@if (shouldShowVendorResults)
+{
+    <VendorResults VendorName="@vendorname"/>
+}
+@code {
+    private string vendorname = "";
+    private bool shouldShowVendorResults = false;
+
+    override protected void OnInitialized()
+    {
+        // original freebie - check out the AdminPage.razor hint :)
+        //TODO - Register to know if Program State has Changed
+
+        WeakReferenceMessenger.Default.Register<ProgramStateChanged>(this, (_, _) =>
+        InvokeAsync(() =>
+        {
+            shouldShowVendorResults = true;
+            StateHasChanged();
+        }
+        ));
+
+        //Slightly different approach
+        //TODO (done for you) - Register to know if Vendor Results Available State has changed
+
+        WeakReferenceMessenger.Default.Register<VendorResultsAvailable>(this, (_, _) =>
+        InvokeAsync(() =>
+        {
+            shouldShowVendorResults = true;
+            StateHasChanged();
+        }
+        ));
+
+        // Register to know if Vendor Results NOT Available state has changed
+        WeakReferenceMessenger.Default.Register<VendorResultsNotAvailable>(this, (_, _) =>
+            InvokeAsync(() =>
+            {
+                shouldShowVendorResults = false;
+                StateHasChanged();
+            }
+        ));
+
+        //hint - use that slightly different approach
+        //TODO - Register to know if Vendor Results NOT Available state has changed
+    }
+}

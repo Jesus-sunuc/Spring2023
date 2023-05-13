@@ -1,0 +1,53 @@
+﻿@inject IConfiguration config
+
+
+<form method="dialog">
+   <div class="space">
+        <label class="text1">Password</label>
+        <input class="form-control mrgRL" placeholder="*****" aria-label="Recipient's username" aria-describedby="basic-addon2" type="password" @bind=adminpassword />
+        <button class="btn btn1 btn-success" @onclick="TestAdminPassword">Login as Admin</button>
+   </div>
+    <div id="carouselExampleIndicators" class="carousel slide spaceB">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/lot1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/lot2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/lot3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <span class="placeholder col-12 placeholder-xs"></span>
+    <span class="placeholder col-12 placeholder-sm"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12 placeholder-lg"></span>
+</form>
+
+
+@code {
+    private string adminpassword;
+    [Parameter] public EventCallback AuthenticationSucceeded { get; set; }
+    private async Task TestAdminPassword()
+    {
+        if( config["AdminAccess"] == adminpassword)
+        {
+           await AuthenticationSucceeded.InvokeAsync();
+        }
+    }
+}

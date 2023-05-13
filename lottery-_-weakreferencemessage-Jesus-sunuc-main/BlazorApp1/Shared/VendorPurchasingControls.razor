@@ -1,0 +1,15 @@
+﻿@inject LotteryProgram lp
+
+<button class="btn btn-warning" @onclick="(()=>BuyNTickets(10))">Buy 10 Tickets</button>
+<button class="btn btn-warning" @onclick="(()=>BuyNTickets(100))">Buy 100 Tickets</button>
+<button class="btn btn-warning" @onclick="(()=>BuyNTickets(1000))">Buy 1,000 Tickets</button>
+<p class="text">So far you have sold @lp.p.soldTickets.Count(t=>t.Player==VendorName).ToString("N0") tickets for this lottery period.</p>
+
+@code {
+    [Parameter]  public string VendorName { get; set; }
+
+    private void BuyNTickets(int numToBuy)
+    {
+        lp.VendorSellingTasks.Add(Task.Run(() => lp.lv.SellQuickTickets(VendorName, numToBuy)));
+    }
+}

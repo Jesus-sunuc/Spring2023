@@ -1,0 +1,63 @@
+﻿@inject LotteryProgram lp
+<h6 class="color1">Out of @((lp.p.winningTicketsL.Count+lp.p.losingTicketsL.Count).ToString("N0")) total tickets sold there were @(lp.p.winningTicketsL.Count.ToString("N0")) winning tickets</h6>
+@if (winningTickets.Any())
+{
+    
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th scope="col">Vendor</th>
+        <th scope="col">Winning Ticket</th>
+        <th scope="col">$ Prize</th>
+    </tr>
+    @foreach (var ticket in winningTickets )
+    {
+        <tr>
+            <td>@ticket.Player</td>
+            <td>@ticket.FormattedBalls</td>
+            <td>@ticket.winAmtDollars.ToString("C2")</td>
+        </tr>
+    }
+
+</table>
+}
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th scope="col">Vendor</th>
+        <th scope="col"># $100 Winners</th>
+        <th scope="col"># $7 Winners</th>
+        <th scope="col"># $4 Winners</th>
+    </tr>
+    @foreach (var vendor in from t in lp.p.winningTicketsL
+                           where t.winLevel >3
+                           group t by t.Player into g 
+                           orderby g.Key
+                           select new {Name=g.Key,Tickets=g} )
+    {
+        <tr>
+            <td>@vendor.Name</td>
+            <td>@(vendor.Tickets.Count(t=>t.winLevel>=4 && t.winLevel<=5).ToString("N0"))</td>
+            <td>@(vendor.Tickets.Count(t=>t.winLevel>=6 && t.winLevel<=7).ToString("N0"))</td>
+            <td>@(vendor.Tickets.Count(t=>t.winLevel>=8 && t.winLevel<=9).ToString("N0"))</td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+@code {
+    IEnumerable<LotteryTicket> winningTickets;
+
+    override protected void OnInitialized()
+    {
+        //TODO - How will I register to know that Vendor Results are Available?
+        WeakReferenceMessenger.Default.Register<VendorResultsAvailable>(this, (_, _) => InvokeAsync(StateHasChanged));
+        winningTickets = from t in lp.p.winningTicketsL
+                         where t.winLevel == 1 ||
+                         t.winLevel == 2 ||
+                         t.winLevel == 3
+                         orderby t.winLevel, t.FormattedBalls
+                         select t;
+    }
+}

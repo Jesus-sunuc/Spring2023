@@ -1,0 +1,76 @@
+﻿@page "/admin"
+@inject LotteryProgram lp
+@inject IConfiguration config
+<h3 class="space">AdminPage</h3>
+@if (!isAdminAuthenticated)
+{
+   <AdminLogin AuthenticationSucceeded="@(()=>isAdminAuthenticated=true)"/>
+}
+else
+{
+<button class="btn btn1 btn-danger" @onclick="EnableTicketSales" disabled="@(lp.p.SalesState==TicketSales.OK)">Enable Ticket Sales</button>
+<button class="btn btn1 btn-danger" @onclick="DisableTicketSales" disabled="@(lp.p.SalesState==TicketSales.CLOSED || isClosingPeriod)">Disable Ticket Sales</button>
+<ul>
+    @foreach (var x in log)
+    {
+        <li>@x</li>
+    }
+</ul>
+
+<AdminResults/>
+}
+
+@code {
+    private bool isClosingPeriod = false;
+    private bool isAdminAuthenticated = false;
+    private decimal GrandTotalRev, TotalRevenue, PrizesPaidAmt = 0M;
+    private decimal GrandTotalPrizes = 0M;
+    private List<string> log = new();
+
+    override protected void OnInitialized()
+    {
+        GrandTotalPrizes = GrandTotalRev = 0M;
+        //TODO - How will I Register to know the Program State has changed?
+        // This one is a freebie - syntax provided here
+        WeakReferenceMessenger.Default.Register<ProgramStateChanged>(this, (_, _) => InvokeAsync(StateHasChanged));
+    }
+    private void EnableTicketSales()
+    {
+        log.Clear();
+        if (lp.EnableSalesPeriod() == false)
+        {
+            throw new Exception("Enable Error: Period was still open.");
+        }
+    }
+    private async Task DisableTicketSales()
+    {
+        isClosingPeriod = true;
+        log.Add("Ensuring sales are done");
+        await Task.WhenAll(lp.VendorSellingTasks.ToArray());
+        log.Add("The sales are done!");
+
+        if (lp.ClosePeriodSales() != true)
+            throw new Exception("Disable Error: Period was already closed.");
+        log.Add("Drawing Winner");
+
+        lp.p.DrawWinningTicket();
+        log.Add("Computing Winners");
+
+        await Task.Run(() => lp.p.ComputeWinners());
+        int[] _numWinLevel = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        Parallel.For(1, _numWinLevel.Length - 1, (i) => _numWinLevel[i] = lp.p.winningTicketsL.Count(x => x.winLevel == i));
+        log.Add("Computing Losers");
+
+        await Task.Run(() => { _numWinLevel[0] = lp.p.losingTicketsL.Count(); });
+        TotalRevenue = (lp.p.winningTicketsL.Count + lp.p.losingTicketsL.Count) * (decimal)2.0;
+        GrandTotalRev += TotalRevenue;
+        PrizesPaidAmt = lp.p.winningTicketsL.Sum(x => x.winAmtDollars);
+        GrandTotalPrizes += PrizesPaidAmt;
+        log.Add("Whew!");
+        isClosingPeriod = false;
+        
+        //TODO - how will I tell the client (Vendors) the message that Vendor Results are available?
+        WeakReferenceMessenger.Default.Send(new VendorResultsAvailable());
+    }
+
+}

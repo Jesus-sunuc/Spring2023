@@ -1,0 +1,36 @@
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.exe
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.deps.json
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.runtimeconfig.json
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.dll
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.pdb
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.AssemblyReference.cache
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.Form1.resources
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.GenerateResource.cache
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.AssemblyInfoInputs.cache
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.AssemblyInfo.cs
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.CoreCompileInputs.cache
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.dll
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\refint\HorseRace.dll
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.pdb
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.genruntimeconfig.cache
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\ref\HorseRace.dll
+C:\Users\Jesus\Desktop\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.Properties.Resources.resources
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.exe
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.deps.json
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.runtimeconfig.json
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.dll
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\bin\Debug\net6.0-windows\HorseRace.pdb
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.AssemblyReference.cache
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.Form1.resources
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.Properties.Resources.resources
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.GenerateResource.cache
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.AssemblyInfoInputs.cache
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.AssemblyInfo.cs
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.csproj.CoreCompileInputs.cache
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.dll
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\refint\HorseRace.dll
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.pdb
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\HorseRace.genruntimeconfig.cache
+C:\Users\Jesus\Desktop\SnowCollegeClasses\Spring2023\Operating System\HorseRace\HorseRace\obj\Debug\net6.0-windows\ref\HorseRace.dll

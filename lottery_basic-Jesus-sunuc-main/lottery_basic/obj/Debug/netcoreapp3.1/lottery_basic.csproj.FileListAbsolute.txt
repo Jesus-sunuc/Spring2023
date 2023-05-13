@@ -1,0 +1,13 @@
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.csprojAssemblyReference.cache
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.csproj.CoreCompileInputs.cache
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.AssemblyInfoInputs.cache
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.AssemblyInfo.cs
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.exe
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.deps.json
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.runtimeconfig.json
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.runtimeconfig.dev.json
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.dll
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\bin\Debug\netcoreapp3.1\lottery_basic.pdb
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.dll
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.pdb
+C:\Users\heber\src\cs\cs_lot_basic\lottery_basic\obj\Debug\netcoreapp3.1\lottery_basic.genruntimeconfig.cache
